@@ -1,5 +1,6 @@
 package cn.itcast.demo;
 
+import cn.itcast.domain.User;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -8,7 +9,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,13 +36,23 @@ public class FreemarkerTest {
 
         //第五步:组装数据,用Map组装
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("name","Tino大帅哥");
+        map.put("name", "Tino大帅哥");
+        map.put("age", 19);
+
+        List<User> userList = new ArrayList<User>();
+        for (int i = 1; i <= 5; i++) {
+            User user = new User();
+            user.setId(i);
+            user.setName("款式,型号: " + i);
+            userList.add(user);
+        }
+        map.put("userList", userList);
 
         //第六步:组装一个输出流,达到结果是为了生成一个html页面
-        Writer out= new FileWriter("/Users/heshuangjun/IDEA_workspace01/freeMarker_Demo/src/main/resources/test1.html");
+        Writer out = new FileWriter("/Users/heshuangjun/IDEA_workspace01/freeMarker_Demo/src/main/resources/test1.html");
 
         //第七步:调用模板对象,输出文件
-        template.process(map,out);
+        template.process(map, out);
 
         //第八步:关闭流
         out.close();
