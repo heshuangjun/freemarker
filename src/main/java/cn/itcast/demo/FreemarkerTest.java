@@ -44,6 +44,8 @@ public class FreemarkerTest {
         //第八步:关闭流
         out.close();
 
-
+        /**
+         * 这是关于freemarker入门小demo的测试
+         */
     }
 }
