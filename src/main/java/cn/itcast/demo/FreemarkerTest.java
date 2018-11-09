@@ -9,10 +9,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author heshuangjun
@@ -47,6 +44,9 @@ public class FreemarkerTest {
             userList.add(user);
         }
         map.put("userList", userList);
+        map.put("timeNow", new Date());
+        map.put("data",888888888);
+        map.put("nameValue",null);
 
         //第六步:组装一个输出流,达到结果是为了生成一个html页面
         Writer out = new FileWriter("/Users/heshuangjun/IDEA_workspace01/freeMarker_Demo/src/main/resources/test1.html");
