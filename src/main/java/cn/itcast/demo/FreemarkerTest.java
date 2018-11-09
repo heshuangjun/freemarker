@@ -33,7 +33,7 @@ public class FreemarkerTest {
 
         //第五步:组装数据,用Map组装
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("name","苏珊");
+        map.put("name","苏珊大小姐");
 
         //第六步:组装一个输出流,达到结果是为了生成一个html页面
         Writer out= new FileWriter("/Users/heshuangjun/IDEA_workspace01/freeMarker_Demo/src/main/resources/test.html");
